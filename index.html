@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizAdapt — Adaptive Question Solver</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ══════════════════════════════════════════════════════
+       SCREEN 1 — Upload / Home
+  ══════════════════════════════════════════════════════════ -->
+  <div id="screen-upload" class="screen active">
+    <div class="center-wrap" style="padding: 40px 0;">
+
+      <!-- Logo + heading -->
+      <div style="margin-bottom: 36px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <div style="width:40px; height:40px; border-radius:12px;
+                      background:linear-gradient(135deg,var(--accent),var(--accent2));
+                      display:flex; align-items:center; justify-content:center; font-size:20px;">⚡</div>
+          <span style="font-size:22px; font-weight:700; letter-spacing:-0.3px;">QuizAdapt</span>
+        </div>
+        <h1 style="margin-bottom:8px;">Adaptive Question Solver</h1>
+        <p>Upload your CSV question bank or try the built-in samples to begin. Questions adapt to your performance level in real time.</p>
+      </div>
+
+      <!-- CSV Upload card -->
+      <div class="card" style="margin-bottom:16px;">
+        <div class="upload-zone" id="drop-zone">
+          <div class="icon">📄</div>
+          <h3 style="margin-bottom:6px; color:var(--text);">Upload Question Bank</h3>
+          <p style="font-size:13px; margin-bottom:4px;">
+            CSV columns: question, option A, option B, option C, option D,<br>
+            hint 1, hint 2, hint 3, answer (A/B/C/D), level (1/2/3)
+          </p>
+          <p style="font-size:12px; color:var(--subtle);">Click to browse or drag &amp; drop a .csv or .xlsx file</p>
+        </div>
+        <!-- Hidden file input -->
+        <input type="file" id="csv-input" accept=".csv,.xlsx,.xls" style="display:none;" />
+        <!-- Status message area -->
+        <div id="csv-status" style="display:none; margin-top:16px;"></div>
+      </div>
+
+      <!-- Sample questions card -->
+      <div class="card-sm" style="margin-bottom:20px;">
+        <p style="font-size:13px; font-weight:600; color:var(--text); margin-bottom:10px;">
+          Or try with built-in sample questions
+        </p>
+        <button id="btn-load-sample" class="btn btn-secondary" style="font-size:14px; padding:10px 20px;">
+          Load Sample Question Bank (15 questions)
+        </button>
+      </div>
+
+      <!-- Scoring info -->
+      <div class="card-sm">
+        <p style="font-size:12px; font-weight:600; color:var(--muted); margin-bottom:12px;
+                  text-transform:uppercase; letter-spacing:0.6px;">Scoring System</p>
+        <div class="score-grid">
+          <div class="score-item">
+            <span class="score-pts" style="color:var(--gold);">10 pts</span>
+            <span style="color:var(--muted);">No hints used</span>
+          </div>
+          <div class="score-item">
+            <span class="score-pts" style="color:var(--accent2);">8 pts</span>
+            <span style="color:var(--muted);">After hint 1</span>
+          </div>
+          <div class="score-item">
+            <span class="score-pts" style="color:var(--blue);">5 pts</span>
+            <span style="color:var(--muted);">After hint 2</span>
+          </div>
+          <div class="score-item">
+            <span class="score-pts" style="color:var(--subtle);">2 pts</span>
+            <span style="color:var(--muted);">After hint 3</span>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <p style="font-size:12px; color:var(--subtle);">
+          ⏱ 2 minutes per question · 💡 Hint prompt every 20 seconds · 📈 Level adapts after each answer
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       SCREEN 2 — Active Question
+  ══════════════════════════════════════════════════════════ -->
+  <div id="screen-question" class="screen">
+    <div class="center-wrap--wide" style="padding-bottom: 48px;">
+
+      <!-- Top bar: quit | meta | score | timer -->
+      <div class="top-bar">
+        <div class="top-bar-left">
+          <button class="btn btn-ghost"
+                  onclick="if(confirm('Quit the quiz? Your progress will be lost.')) UI.goToUpload();">
+            ✕ Quit
+          </button>
+          <div class="q-meta">
+            <p>Question <span id="q-num">1</span> of <span id="q-total">10</span></p>
+            <div class="q-meta-row">
+              <span id="q-level-badge" class="badge badge-purple">Level 1</span>
+              <div class="level-pips" id="level-pips"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="top-bar-right">
+          <div class="score-display">
+            <p>Total Score</p>
+            <span class="val mono" id="q-score-display">0</span>
+          </div>
+
+          <!-- SVG Timer Ring -->
+          <div class="timer-wrap">
+            <svg class="timer-svg" width="68" height="68" viewBox="0 0 68 68">
+              <!-- Track -->
+              <circle cx="34" cy="34" r="28"
+                      fill="none"
+                      stroke="var(--surface2)"
+                      stroke-width="6" />
+              <!-- Progress arc -->
+              <circle id="timer-arc"
+                      class="timer-arc"
+                      cx="34" cy="34" r="28"
+                      fill="none"
+                      stroke="var(--accent2)"
+                      stroke-width="6"
+                      stroke-linecap="round"
+                      stroke-dasharray="175.93"
+                      stroke-dashoffset="0" />
+            </svg>
+            <span class="timer-label mono" id="timer-label">2:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-bar" style="margin-bottom: 24px;">
+        <div class="progress-fill" id="q-progress" style="width:0%;"></div>
+      </div>
+
+      <!-- Question card -->
+      <div class="card anim-slide-up" id="question-card">
+        <p id="q-text"
+           style="font-size:18px; font-weight:500; color:var(--text);
+                  line-height:1.55; margin-bottom:24px;"></p>
+        <div class="options-list" id="options-list"></div>
+      </div>
+
+      <!-- Hints area (populated dynamically) -->
+      <div class="hints-area" id="hints-area"></div>
+
+      <!-- Feedback area (populated dynamically) -->
+      <div id="feedback-area"></div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       SCREEN 3 — Results
+  ══════════════════════════════════════════════════════════ -->
+  <div id="screen-results" class="screen">
+    <div class="center-wrap" style="padding: 40px 0;">
+
+      <div style="text-align:center; margin-bottom:32px;">
+        <h1 style="margin-bottom:6px;">Quiz Complete!</h1>
+        <p>Here's how you performed</p>
+      </div>
+
+      <!-- Score ring card -->
+      <div class="card" style="text-align:center; margin-bottom:16px;">
+        <div class="score-ring-wrap">
+          <svg width="150" height="150" viewBox="0 0 150 150"
+               style="transform:rotate(-90deg);">
+            <circle cx="75" cy="75" r="60"
+                    fill="none"
+                    stroke="var(--surface2)"
+                    stroke-width="10" />
+            <circle id="result-arc"
+                    cx="75" cy="75" r="60"
+                    fill="none"
+                    stroke="url(#scoreGrad)"
+                    stroke-width="10"
+                    stroke-linecap="round"
+                    stroke-dasharray="376.99"
+                    stroke-dashoffset="376.99"
+                    style="transition:stroke-dashoffset 1.5s ease;" />
+            <defs>
+              <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#7C3AED" />
+                <stop offset="100%" stop-color="#A855F7" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="score-ring-inner">
+            <span class="score-big mono" id="final-score-big">0</span>
+            <p class="score-label">points</p>
+          </div>
+        </div>
+
+        <div id="result-emoji" style="font-size:36px; margin-bottom:8px;">🎯</div>
+        <h2 id="result-title" style="margin-bottom:4px;">Well done!</h2>
+        <p id="result-sub" style="font-size:14px;"></p>
+      </div>
+
+      <!-- Stats card -->
+      <div class="card" style="margin-bottom:20px;">
+        <ul class="stat-list">
+          <li class="stat-row">
+            <span class="stat-key">Questions answered</span>
+            <span class="stat-value mono" id="stat-questions">0</span>
+          </li>
+          <li class="stat-row">
+            <span class="stat-key">Correct answers</span>
+            <span class="stat-value mono" id="stat-correct"
+                  style="color:var(--emerald);">0</span>
+          </li>
+          <li class="stat-row">
+            <span class="stat-key">Accuracy</span>
+            <span class="stat-value mono" id="stat-accuracy">0%</span>
+          </li>
+          <li class="stat-row">
+            <span class="stat-key">Total hints used</span>
+            <span class="stat-value mono" id="stat-hints"
+                  style="color:var(--gold);">0</span>
+          </li>
+          <li class="stat-row">
+            <span class="stat-key">Final level reached</span>
+            <span id="stat-level" class="badge badge-purple">Level 1</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Actions -->
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button class="btn btn-primary" style="flex:1; min-width:140px;"
+                onclick="UI.restartQuiz()">
+          Play Again
+        </button>
+        <button class="btn btn-secondary"
+                onclick="UI.goToUpload()">
+          New Questions
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /#app -->
+
+<!-- ── Modal container (populated by ui.js) ────────────────── -->
+<div id="modal-container"></div>
+
+<!-- ── Scripts (order matters) ─────────────────────────────── -->
+<!-- SheetJS: enables reading .xlsx Excel files in the browser -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="js/csv-parser.js"></script>
+<script src="js/quiz-engine.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
