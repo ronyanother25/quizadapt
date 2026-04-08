@@ -205,6 +205,23 @@ const UI = (() => {
     txt.style.color  = timeLeft <= 10 ? 'var(--red)' : 'var(--text)';
   }
 
+  // ── Text-to-Speech ─────────────────────────────────────────
+  let _lastSpokenHintCount = 0;
+
+  function speakText(text) {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.rate  = 0.92;
+    utter.pitch = 1;
+    utter.volume = 1;
+    window.speechSynthesis.speak(utter);
+  }
+
+  function stopSpeech() {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+  }
+
   // ── Hints UI ───────────────────────────────────────────────
   function renderHints(hintsRevealed) {
     const area = $('hints-area');
@@ -213,6 +230,13 @@ const UI = (() => {
         <div class="hint-number">${h.number}</div>
         <p class="hint-text">${escapeHtml(h.text)}</p>
       </div>`).join('');
+
+    // Speak only the newest hint (avoid re-reading previous ones)
+    if (hintsRevealed.length > _lastSpokenHintCount) {
+      const newest = hintsRevealed[hintsRevealed.length - 1];
+      speakText('Hint ' + newest.number + '. ' + newest.text);
+      _lastSpokenHintCount = hintsRevealed.length;
+    }
   }
 
   // ── Hint Prompt Modal ──────────────────────────────────────
@@ -336,6 +360,8 @@ const UI = (() => {
   // ── Wire up QuizEngine events ──────────────────────────────
   function bindEngineEvents() {
     QuizEngine.on('questionLoaded', data => {
+      stopSpeech();
+      _lastSpokenHintCount = 0;
       showScreen('question');
       renderQuestion(data);
     });
