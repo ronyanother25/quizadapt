@@ -140,18 +140,18 @@ const App = (() => {
     UI.init();
   }
 
-  /** Called by UI when a CSV is loaded or sample is chosen */
+  /** Called by UI when a topic is chosen or CSV is loaded */
   function start(questions) {
     currentQuestions = questions;
     UI.startQuiz(questions);
   }
 
-  /** Restart with the same question bank */
+  /** Restart with the same topic/question bank */
   function restart() {
     if (currentQuestions) {
       UI.startQuiz(currentQuestions);
     } else {
-      UI.goToUpload();
+      UI.goToSubject();
     }
   }
 

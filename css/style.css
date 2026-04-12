@@ -471,6 +471,68 @@ p  { font-size: 15px; color: var(--muted); }
   color: var(--gold);
 }
 
+/* ── Subject Selection ───────────────────────────────────────── */
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.subject-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 16px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  font-family: var(--font);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.subject-card:hover {
+  border-color: var(--subject-color, var(--accent2));
+  background: rgba(124, 58, 237, 0.07);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.subject-icon { font-size: 44px; }
+.subject-name { font-size: 18px; font-weight: 700; }
+.subject-meta { font-size: 12px; color: var(--muted); }
+
+/* ── Topic Selection ─────────────────────────────────────────── */
+.topic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.topic-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  font-family: var(--font);
+  color: var(--text);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.topic-card:hover {
+  border-color: var(--subject-color, var(--accent2));
+  background: rgba(124, 58, 237, 0.07);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+.topic-name { font-size: 15px; font-weight: 600; }
+.topic-meta { font-size: 12px; color: var(--muted); }
+
 /* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 480px) {
   h1 { font-size: 22px; }
@@ -478,4 +540,6 @@ p  { font-size: 15px; color: var(--muted); }
   .card { padding: 18px; }
   .modal { padding: 24px 20px; }
   .score-big { font-size: 32px; }
+  .subject-grid { grid-template-columns: 1fr; }
+  .topic-grid   { grid-template-columns: 1fr; }
 }

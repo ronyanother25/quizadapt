@@ -13,9 +13,13 @@ const UI = (() => {
 
   const screens = {
     upload:   $('screen-upload'),
+    subject:  $('screen-subject'),
+    topic:    $('screen-topic'),
     question: $('screen-question'),
     results:  $('screen-results'),
   };
+
+  let _selectedSubject = null;
 
   // ── Screen Management ──────────────────────────────────────
   function showScreen(name) {
@@ -103,7 +107,62 @@ const UI = (() => {
   }
 
   function loadSample() {
-    App.start(SAMPLE_QUESTIONS);
+    showScreen('subject');
+    renderSubjects();
+  }
+
+  // ── Subject Screen ─────────────────────────────────────────
+  function renderSubjects() {
+    const grid = $('subject-grid');
+    const colors = { Physics: 'var(--accent2)', Chemistry: 'var(--emerald)', Maths: 'var(--gold)' };
+    grid.innerHTML = Object.entries(QUESTION_BANK).map(([name, data]) => {
+      const topicCount = Object.keys(data.topics).length;
+      const qCount     = Object.values(data.topics).reduce((s, qs) => s + qs.length, 0);
+      const color      = colors[name] || 'var(--accent2)';
+      return `
+        <button class="subject-card" onclick="UI.onSubjectClick('${name}')"
+                style="--subject-color:${color}">
+          <div class="subject-icon">${data.icon}</div>
+          <div class="subject-name">${name}</div>
+          <div class="subject-meta">${topicCount} topics · ${qCount} questions</div>
+        </button>`;
+    }).join('');
+  }
+
+  function onSubjectClick(subject) {
+    _selectedSubject = subject;
+    showScreen('topic');
+    renderTopics(subject);
+  }
+
+  // ── Topic Screen ───────────────────────────────────────────
+  function renderTopics(subject) {
+    const data   = QUESTION_BANK[subject];
+    const colors = { Physics: 'var(--accent2)', Chemistry: 'var(--emerald)', Maths: 'var(--gold)' };
+    const color  = colors[subject] || 'var(--accent2)';
+
+    $('topic-header').innerHTML = `
+      <div style="font-size:48px; margin-bottom:10px;">${data.icon}</div>
+      <h1 style="color:${color};">${subject}</h1>
+      <p>Choose a topic to practice</p>`;
+
+    const grid = $('topic-grid');
+    grid.innerHTML = Object.entries(data.topics).map(([name, questions]) => `
+      <button class="topic-card" onclick="UI.onTopicClick('${subject}', '${name}')"
+              style="--subject-color:${color}">
+        <div class="topic-name">${name}</div>
+        <div class="topic-meta">${questions.length} questions · Levels 1–3</div>
+      </button>`).join('');
+  }
+
+  function onTopicClick(subject, topic) {
+    const questions = QUESTION_BANK[subject].topics[topic];
+    App.start(questions, subject, topic);
+  }
+
+  function goToSubject() {
+    showScreen('subject');
+    renderSubjects();
   }
 
   // ── Question Screen ────────────────────────────────────────
@@ -433,9 +492,12 @@ const UI = (() => {
     startQuiz,
     restartQuiz,
     goToUpload,
+    goToSubject,
     // Called from inline HTML onclick
     onOptionClick,
     onAcceptHint,
     onDeclineHint,
+    onSubjectClick,
+    onTopicClick,
   };
 })();
