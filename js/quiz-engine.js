@@ -266,6 +266,9 @@ const QuizEngine = (() => {
     submitAnswer,
     acceptHint,
 
+    // Expose quit so UI can end the quiz early and show results
+    quit: endQuiz,
+
     // Event system
     on,
     off,

@@ -20,6 +20,17 @@ const UI = (() => {
   };
 
   let _selectedSubject = null;
+  let _speechLang = 'en-IN';
+
+  const LANG_OPTIONS = [
+    { code: 'en-IN', label: 'English' },
+    { code: 'hi-IN', label: 'हिंदी' },
+    { code: 'ta-IN', label: 'தமிழ்' },
+    { code: 'te-IN', label: 'తెలుగు' },
+    { code: 'ml-IN', label: 'മലയാളം' },
+    { code: 'kn-IN', label: 'ಕನ್ನಡ' },
+    { code: 'mr-IN', label: 'मराठी' },
+  ];
 
   // ── Screen Management ──────────────────────────────────────
   function showScreen(name) {
@@ -115,7 +126,19 @@ const UI = (() => {
   function renderSubjects() {
     const grid = $('subject-grid');
     const colors = { Physics: 'var(--accent2)', Chemistry: 'var(--emerald)', Maths: 'var(--gold)' };
-    grid.innerHTML = Object.entries(QUESTION_BANK).map(([name, data]) => {
+
+    // Language selector
+    const langOpts = LANG_OPTIONS.map(l =>
+      `<option value="${l.code}"${l.code === _speechLang ? ' selected' : ''}>${l.label}</option>`
+    ).join('');
+    const langBar = `
+      <div class="lang-bar">
+        <span class="lang-label">🔊 Hint voice:</span>
+        <select class="lang-select" onchange="UI.onLangChange(this.value)">${langOpts}</select>
+      </div>`;
+
+    // Subject cards
+    const cards = Object.entries(QUESTION_BANK).map(([name, data]) => {
       const topicCount = Object.keys(data.topics).length;
       const qCount     = Object.values(data.topics).reduce((s, qs) => s + qs.length, 0);
       const color      = colors[name] || 'var(--accent2)';
@@ -127,6 +150,8 @@ const UI = (() => {
           <div class="subject-meta">${topicCount} topics · ${qCount} questions</div>
         </button>`;
     }).join('');
+
+    grid.innerHTML = langBar + `<div class="subject-cards">${cards}</div>`;
   }
 
   function onSubjectClick(subject) {
@@ -271,10 +296,15 @@ const UI = (() => {
     if (!window.speechSynthesis) return;
     window.speechSynthesis.cancel();
     const utter = new SpeechSynthesisUtterance(text);
-    utter.rate  = 0.92;
-    utter.pitch = 1;
+    utter.lang   = _speechLang;
+    utter.rate   = 0.92;
+    utter.pitch  = 1;
     utter.volume = 1;
     window.speechSynthesis.speak(utter);
+  }
+
+  function onLangChange(code) {
+    _speechLang = code;
   }
 
   function stopSpeech() {
@@ -472,6 +502,12 @@ const UI = (() => {
     App.restart();
   }
 
+  function quitQuiz() {
+    if (!confirm('Quit the quiz? Your current score will be shown.')) return;
+    stopSpeech();
+    QuizEngine.quit();
+  }
+
   function goToUpload() {
     // Reset file input so same file can be re-selected
     const fi = $('csv-input');
@@ -497,7 +533,9 @@ const UI = (() => {
     onOptionClick,
     onAcceptHint,
     onDeclineHint,
+    quitQuiz,
     onSubjectClick,
     onTopicClick,
+    onLangChange,
   };
 })();
