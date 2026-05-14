@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JEE Mains PYQ — QuizAdapt Topics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Times New Roman', serif; font-size: 11pt; color: #111; background: #fff; }
+  .cover { page-break-after: always; text-align: center; padding: 120px 40px; }
+  .cover h1 { font-size: 26pt; font-weight: bold; margin-bottom: 12px; }
+  .cover h2 { font-size: 14pt; font-weight: normal; color: #444; margin-bottom: 8px; }
+  .cover .meta { margin-top: 40px; font-size: 11pt; color: #555; }
+  .cover .topics-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px 20px; max-width: 600px; margin: 30px auto; text-align: left; font-size: 10pt; }
+  .subject-header { page-break-before: always; background: #1a1a2e; color: #fff; padding: 14px 24px; font-size: 16pt; font-weight: bold; margin-bottom: 0; }
+  .topic-header { background: #e8f0fe; padding: 8px 20px; font-size: 12pt; font-weight: bold; border-left: 4px solid #3366cc; margin: 16px 0 8px 0; }
+  .question-block { padding: 6px 20px 10px 20px; border-bottom: 1px solid #ddd; }
+  .q-num { font-weight: bold; display: inline; }
+  .level-badge { display: inline-block; font-size: 8pt; padding: 1px 6px; border-radius: 3px; margin-left: 8px; font-weight: bold; vertical-align: middle; }
+  .l1 { background: #d4edda; color: #155724; }
+  .l2 { background: #fff3cd; color: #856404; }
+  .l3 { background: #f8d7da; color: #721c24; }
+  .q-text { margin: 4px 0 8px 0; line-height: 1.5; }
+  .options { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 20px; margin-left: 8px; }
+  .opt { line-height: 1.5; }
+  .hints { margin-top: 6px; font-size: 9.5pt; color: #555; background: #f9f9f9; padding: 4px 8px; border-radius: 3px; }
+  .hints span { display: block; }
+  .answer-key { page-break-before: always; padding: 20px; }
+  .answer-key h2 { font-size: 16pt; font-weight: bold; margin-bottom: 16px; border-bottom: 2px solid #333; padding-bottom: 6px; }
+  .ak-subject { margin-bottom: 16px; }
+  .ak-subject h3 { font-size: 12pt; font-weight: bold; margin-bottom: 6px; }
+  .ak-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; font-size: 9.5pt; }
+  .ak-item { border: 1px solid #ccc; padding: 3px 6px; }
+  .ak-item .qn { font-weight: bold; color: #333; }
+  .ak-item .ans { color: #cc0000; font-weight: bold; }
+  @media print {
+    body { font-size: 10.5pt; }
+    .subject-header { page-break-before: always; }
+    .question-block { page-break-inside: avoid; }
+    .answer-key { page-break-before: always; }
+    @page { margin: 18mm 15mm; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <h1>JEE Mains — Previous Year Questions</h1>
+  <h2>Curated for QuizAdapt · 75 Questions · 15 Topics</h2>
+  <div class="meta">Level 1 = Easy &nbsp;|&nbsp; Level 2 = Medium &nbsp;|&nbsp; Level 3 = Hard<br>Answer Key on last page &nbsp;·&nbsp; Hints included after each question</div>
+  <div class="topics-grid">
+    <div><b>PHYSICS</b><br>Kinematics<br>Laws of Motion<br>Work, Energy &amp; Power<br>Electrostatics<br>Modern Physics</div>
+    <div><b>CHEMISTRY</b><br>Atomic Structure<br>Chemical Bonding<br>Thermodynamics<br>Electrochemistry<br>Organic Chemistry</div>
+    <div><b>MATHEMATICS</b><br>Limits &amp; Continuity<br>Integration<br>Matrices &amp; Determinants<br>Complex Numbers<br>Probability</div>
+  </div>
+</div>
+
+<!-- ═══════════════════ PHYSICS ═══════════════════ -->
+<div class="subject-header">⚡ PHYSICS</div>
+
+<div class="topic-header">Kinematics</div>
+
+<div class="question-block">
+  <span class="q-num">P1.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">A ball is thrown vertically upward with initial velocity 20 m/s. The maximum height reached is (g = 10 m/s²):</div>
+  <div class="options"><div class="opt">(A) 10 m</div><div class="opt">(B) 20 m</div><div class="opt">(C) 30 m</div><div class="opt">(D) 40 m</div></div>
+  <div class="hints"><span>Hint 1: At max height, final velocity v = 0.</span><span>Hint 2: Use v² = u² − 2gH → 0 = 400 − 20H.</span><span>Hint 3: H = 400/20 = 20 m.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P2.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">A projectile is fired at 60° above horizontal with speed 40 m/s. Time of flight is (g = 10 m/s²):</div>
+  <div class="options"><div class="opt">(A) 4 s</div><div class="opt">(B) 4√2 s</div><div class="opt">(C) 4√3 s</div><div class="opt">(D) 8 s</div></div>
+  <div class="hints"><span>Hint 1: T = 2u sinθ / g.</span><span>Hint 2: sin 60° = √3/2; T = 2 × 40 × (√3/2) / 10.</span><span>Hint 3: T = 80√3/20 = 4√3 s ≈ 6.93 s.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P3.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Position of a particle: x = 2t² + 3t + 1 (in metres). Velocity at t = 2 s is:</div>
+  <div class="options"><div class="opt">(A) 7 m/s</div><div class="opt">(B) 9 m/s</div><div class="opt">(C) 11 m/s</div><div class="opt">(D) 13 m/s</div></div>
+  <div class="hints"><span>Hint 1: Differentiate x with respect to t: v = dx/dt.</span><span>Hint 2: v = 4t + 3.</span><span>Hint 3: At t = 2: v = 8 + 3 = 11 m/s.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P4.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">A body thrown at 30° above horizontal at 20 m/s. Horizontal range (g = 10 m/s²):</div>
+  <div class="options"><div class="opt">(A) 20 m</div><div class="opt">(B) 20√3 m</div><div class="opt">(C) 40 m</div><div class="opt">(D) 40√3 m</div></div>
+  <div class="hints"><span>Hint 1: R = u² sin 2θ / g.</span><span>Hint 2: sin 60° = √3/2; R = 400 × (√3/2) / 10.</span><span>Hint 3: R = 200√3/10 = 20√3 m.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P5.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">Position vector: r⃗ = (3t²î + 2tĵ) m. Magnitude of acceleration at t = 2 s is:</div>
+  <div class="options"><div class="opt">(A) 2 m/s²</div><div class="opt">(B) 4 m/s²</div><div class="opt">(C) 6 m/s²</div><div class="opt">(D) 8 m/s²</div></div>
+  <div class="hints"><span>Hint 1: v⃗ = dr⃗/dt = (6tî + 2ĵ).</span><span>Hint 2: a⃗ = dv⃗/dt = 6î (constant).</span><span>Hint 3: |a⃗| = 6 m/s² (independent of t).</span></div>
+</div>
+
+<div class="topic-header">Laws of Motion</div>
+
+<div class="question-block">
+  <span class="q-num">P6.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">A 10 kg block on a frictionless surface is acted on by a 40 N horizontal force. Acceleration is:</div>
+  <div class="options"><div class="opt">(A) 2 m/s²</div><div class="opt">(B) 3 m/s²</div><div class="opt">(C) 4 m/s²</div><div class="opt">(D) 5 m/s²</div></div>
+  <div class="hints"><span>Hint 1: Newton's second law: F = ma.</span><span>Hint 2: a = F/m = 40/10.</span><span>Hint 3: a = 4 m/s².</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P7.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Block A (5 kg) on a surface (μ = 0.2) is connected via string over frictionless pulley to hanging block B (5 kg). Acceleration of system (g = 10 m/s²):</div>
+  <div class="options"><div class="opt">(A) 2 m/s²</div><div class="opt">(B) 3 m/s²</div><div class="opt">(C) 4 m/s²</div><div class="opt">(D) 5 m/s²</div></div>
+  <div class="hints"><span>Hint 1: Net force = weight of B − friction on A.</span><span>Hint 2: Net F = 5×10 − 0.2×5×10 = 50 − 10 = 40 N.</span><span>Hint 3: a = 40/(5+5) = 4 m/s².</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P8.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">A man of mass 80 kg stands on a scale in a lift accelerating upward at 2 m/s². Scale reading (g = 10 m/s²):</div>
+  <div class="options"><div class="opt">(A) 640 N</div><div class="opt">(B) 800 N</div><div class="opt">(C) 960 N</div><div class="opt">(D) 1120 N</div></div>
+  <div class="hints"><span>Hint 1: Apparent weight = m(g + a).</span><span>Hint 2: R = 80 × (10 + 2).</span><span>Hint 3: R = 80 × 12 = 960 N.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P9.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Two blocks of 2 kg and 3 kg on a frictionless surface are connected by a string. A 10 N force acts on the 2 kg block. Tension in the string is:</div>
+  <div class="options"><div class="opt">(A) 2 N</div><div class="opt">(B) 4 N</div><div class="opt">(C) 6 N</div><div class="opt">(D) 8 N</div></div>
+  <div class="hints"><span>Hint 1: System acceleration: a = 10/(2+3) = 2 m/s².</span><span>Hint 2: Tension accelerates only the 3 kg block.</span><span>Hint 3: T = 3 × 2 = 6 N.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P10.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">A block is in equilibrium on a rough incline (30°, μ = 0.5√3). Minimum force parallel to incline needed to prevent sliding down (g = 10 m/s², mass = 2 kg):</div>
+  <div class="options"><div class="opt">(A) 0 N (no force needed)</div><div class="opt">(B) 2 N down the incline</div><div class="opt">(C) 5 N up the incline</div><div class="opt">(D) 10 N</div></div>
+  <div class="hints"><span>Hint 1: Check if block slides: compare mg sinθ with μmg cosθ.</span><span>Hint 2: mg sin30° = 10 N; μmg cos30° = 0.5√3×2×10×(√3/2) = 15 N.</span><span>Hint 3: Friction (15 N) &gt; gravity component (10 N), so block stays. No external force needed.</span></div>
+</div>
+
+<div class="topic-header">Work, Energy &amp; Power</div>
+
+<div class="question-block">
+  <span class="q-num">P11.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">A 5 kg block is pushed 3 m along a surface by a 20 N force at 60° to horizontal. Work done by the force:</div>
+  <div class="options"><div class="opt">(A) 20 J</div><div class="opt">(B) 30 J</div><div class="opt">(C) 40 J</div><div class="opt">(D) 60 J</div></div>
+  <div class="hints"><span>Hint 1: W = F · d · cosθ.</span><span>Hint 2: W = 20 × 3 × cos60°.</span><span>Hint 3: cos60° = 0.5; W = 60 × 0.5 = 30 J.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P12.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">A spring (k = 1000 N/m) is compressed by 0.1 m. Elastic potential energy stored:</div>
+  <div class="options"><div class="opt">(A) 0.5 J</div><div class="opt">(B) 5 J</div><div class="opt">(C) 10 J</div><div class="opt">(D) 50 J</div></div>
+  <div class="hints"><span>Hint 1: PE = ½kx².</span><span>Hint 2: PE = ½ × 1000 × (0.1)².</span><span>Hint 3: PE = 500 × 0.01 = 5 J.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P13.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">A 5 kg body at 6 m/s collides and sticks to a stationary 3 kg body (perfectly inelastic). Final speed:</div>
+  <div class="options"><div class="opt">(A) 3 m/s</div><div class="opt">(B) 3.75 m/s</div><div class="opt">(C) 4 m/s</div><div class="opt">(D) 5 m/s</div></div>
+  <div class="hints"><span>Hint 1: Conservation of momentum: m₁u₁ = (m₁+m₂)v.</span><span>Hint 2: 5×6 = (5+3)v → 30 = 8v.</span><span>Hint 3: v = 30/8 = 3.75 m/s.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P14.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Work done by gravity on a 2 kg ball falling freely through 10 m (g = 10 m/s²):</div>
+  <div class="options"><div class="opt">(A) 100 J</div><div class="opt">(B) 150 J</div><div class="opt">(C) 200 J</div><div class="opt">(D) 250 J</div></div>
+  <div class="hints"><span>Hint 1: Work by gravity = mgh (force and displacement in same direction).</span><span>Hint 2: W = 2 × 10 × 10.</span><span>Hint 3: W = 200 J.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P15.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">A particle moves from (0,0) to (2,4) in force field F⃗ = (3x²î + 4yĵ) N. Work done:</div>
+  <div class="options"><div class="opt">(A) 24 J</div><div class="opt">(B) 32 J</div><div class="opt">(C) 40 J</div><div class="opt">(D) 48 J</div></div>
+  <div class="hints"><span>Hint 1: W = ∫F⃗·dr⃗ = ∫3x²dx + ∫4ydy (this force is conservative).</span><span>Hint 2: ∫₀²3x²dx = [x³]₀² = 8 J; ∫₀⁴4ydy = [2y²]₀⁴ = 32 J.</span><span>Hint 3: W = 8 + 32 = 40 J.</span></div>
+</div>
+
+<div class="topic-header">Electrostatics</div>
+
+<div class="question-block">
+  <span class="q-num">P16.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">Force between +2 μC and −2 μC charges separated by 10 cm (k = 9×10⁹ N·m²/C²):</div>
+  <div class="options"><div class="opt">(A) 1.8 N</div><div class="opt">(B) 3.6 N</div><div class="opt">(C) 7.2 N</div><div class="opt">(D) 9.0 N</div></div>
+  <div class="hints"><span>Hint 1: F = kq₁q₂/r².</span><span>Hint 2: F = 9×10⁹ × 4×10⁻¹² / (0.1)².</span><span>Hint 3: F = 36×10⁻³ / 10⁻² = 3.6 N (attractive).</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P17.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Electric field due to a +4 μC charge at 30 cm distance (k = 9×10⁹):</div>
+  <div class="options"><div class="opt">(A) 2×10⁵ N/C</div><div class="opt">(B) 3×10⁵ N/C</div><div class="opt">(C) 4×10⁵ N/C</div><div class="opt">(D) 6×10⁵ N/C</div></div>
+  <div class="hints"><span>Hint 1: E = kq/r².</span><span>Hint 2: E = 9×10⁹ × 4×10⁻⁶ / (0.3)².</span><span>Hint 3: E = 36000 / 0.09 = 4×10⁵ N/C.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P18.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Three equal charges q at the vertices of equilateral triangle (side a). Total potential energy of the system:</div>
+  <div class="options"><div class="opt">(A) kq²/a</div><div class="opt">(B) 2kq²/a</div><div class="opt">(C) 3kq²/a</div><div class="opt">(D) kq²/3a</div></div>
+  <div class="hints"><span>Hint 1: Count pair interactions: 3 pairs each at distance a.</span><span>Hint 2: U_pair = kq²/a; three such pairs.</span><span>Hint 3: U_total = 3kq²/a.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P19.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">A parallel plate capacitor has plate area 0.1 m² and separation 1 mm. Capacitance (ε₀ = 8.85×10⁻¹² F/m):</div>
+  <div class="options"><div class="opt">(A) 88.5 pF</div><div class="opt">(B) 885 pF</div><div class="opt">(C) 8.85 nF</div><div class="opt">(D) 88.5 nF</div></div>
+  <div class="hints"><span>Hint 1: C = ε₀A/d.</span><span>Hint 2: C = 8.85×10⁻¹² × 0.1 / 10⁻³.</span><span>Hint 3: C = 8.85×10⁻¹³ / 10⁻³ = 8.85×10⁻¹⁰ F = 885 pF.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P20.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">An electric dipole (p = 2×10⁻³ C·m) is placed in uniform field E = 10⁴ N/C at 30° to the field. Torque on dipole:</div>
+  <div class="options"><div class="opt">(A) 5 N·m</div><div class="opt">(B) 10 N·m</div><div class="opt">(C) 10√3 N·m</div><div class="opt">(D) 20 N·m</div></div>
+  <div class="hints"><span>Hint 1: τ = pE sinθ.</span><span>Hint 2: τ = 2×10⁻³ × 10⁴ × sin30°.</span><span>Hint 3: τ = 20 × 0.5 = 10 N·m.</span></div>
+</div>
+
+<div class="topic-header">Modern Physics</div>
+
+<div class="question-block">
+  <span class="q-num">P21.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">Energy of a photon with wavelength 600 nm (hc = 1240 eV·nm):</div>
+  <div class="options"><div class="opt">(A) 1.5 eV</div><div class="opt">(B) 2.07 eV</div><div class="opt">(C) 3.1 eV</div><div class="opt">(D) 4.2 eV</div></div>
+  <div class="hints"><span>Hint 1: E = hc/λ.</span><span>Hint 2: E = 1240/600 eV.</span><span>Hint 3: E ≈ 2.07 eV.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P22.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">Energy of electron in the 2nd orbit of hydrogen atom (ground state energy = −13.6 eV):</div>
+  <div class="options"><div class="opt">(A) −13.6 eV</div><div class="opt">(B) −6.8 eV</div><div class="opt">(C) −3.4 eV</div><div class="opt">(D) −1.51 eV</div></div>
+  <div class="hints"><span>Hint 1: Eₙ = −13.6/n² eV.</span><span>Hint 2: E₂ = −13.6/4.</span><span>Hint 3: E₂ = −3.4 eV.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P23.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">²³⁸U decays to ²⁰⁶Pb. Number of α and β⁻ particles emitted respectively:</div>
+  <div class="options"><div class="opt">(A) 6α, 8β</div><div class="opt">(B) 8α, 6β</div><div class="opt">(C) 7α, 6β</div><div class="opt">(D) 8α, 8β</div></div>
+  <div class="hints"><span>Hint 1: Mass change: 238−206 = 32 = 4×8, so 8 α particles emitted.</span><span>Hint 2: Atomic number after 8α: 92−16 = 76. Need 82 (Pb). Deficit = 6.</span><span>Hint 3: Each β⁻ increases Z by 1 → 6 β⁻ particles.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P24.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Half-life of a radioactive substance is 20 years. Fraction remaining after 60 years:</div>
+  <div class="options"><div class="opt">(A) 1/4</div><div class="opt">(B) 1/6</div><div class="opt">(C) 1/8</div><div class="opt">(D) 1/16</div></div>
+  <div class="hints"><span>Hint 1: Number of half-lives: n = 60/20 = 3.</span><span>Hint 2: Fraction remaining = (1/2)ⁿ.</span><span>Hint 3: (1/2)³ = 1/8.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">P25.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">Threshold wavelength for a metal is 500 nm. Maximum KE of photoelectrons when light of 300 nm is used (hc = 1240 eV·nm):</div>
+  <div class="options"><div class="opt">(A) 0.66 eV</div><div class="opt">(B) 1.00 eV</div><div class="opt">(C) 1.65 eV</div><div class="opt">(D) 2.48 eV</div></div>
+  <div class="hints"><span>Hint 1: KE_max = hc/λ − hc/λ₀ (Einstein's equation).</span><span>Hint 2: E_incident = 1240/300 ≈ 4.13 eV; Work function = 1240/500 = 2.48 eV.</span><span>Hint 3: KE_max = 4.13 − 2.48 ≈ 1.65 eV.</span></div>
+</div>
+
+<!-- ═══════════════════ CHEMISTRY ═══════════════════ -->
+<div class="subject-header">🧪 CHEMISTRY</div>
+
+<div class="topic-header">Atomic Structure</div>
+
+<div class="question-block">
+  <span class="q-num">C1.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">Energy of an electron in the 2nd Bohr orbit of hydrogen atom:</div>
+  <div class="options"><div class="opt">(A) −13.6 eV</div><div class="opt">(B) −3.4 eV</div><div class="opt">(C) −1.51 eV</div><div class="opt">(D) −0.85 eV</div></div>
+  <div class="hints"><span>Hint 1: Eₙ = −13.6/n² eV for hydrogen.</span><span>Hint 2: n = 2 → E₂ = −13.6/4.</span><span>Hint 3: E₂ = −3.4 eV.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C2.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">Number of radial nodes in a 3p orbital:</div>
+  <div class="options"><div class="opt">(A) 0</div><div class="opt">(B) 1</div><div class="opt">(C) 2</div><div class="opt">(D) 3</div></div>
+  <div class="hints"><span>Hint 1: Radial nodes = n − l − 1.</span><span>Hint 2: For 3p: n=3, l=1.</span><span>Hint 3: 3 − 1 − 1 = 1 radial node.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C3.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">In Bohr's model, ratio of time periods T₂/T₁ for electron in hydrogen atom:</div>
+  <div class="options"><div class="opt">(A) 2</div><div class="opt">(B) 4</div><div class="opt">(C) 6</div><div class="opt">(D) 8</div></div>
+  <div class="hints"><span>Hint 1: Tₙ ∝ n³/Z² (for same element, Z is constant).</span><span>Hint 2: T₂/T₁ = (2/1)³.</span><span>Hint 3: T₂/T₁ = 8.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C4.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">de Broglie wavelength associated with electron in 3rd Bohr orbit of H (a₀ = 0.529 Å):</div>
+  <div class="options"><div class="opt">(A) 3.3 Å</div><div class="opt">(B) 6.6 Å</div><div class="opt">(C) 9.9 Å</div><div class="opt">(D) 13.3 Å</div></div>
+  <div class="hints"><span>Hint 1: Bohr condition: 2πrₙ = nλ → λ = 2πrₙ/n.</span><span>Hint 2: r₃ = 9a₀ = 9×0.529 = 4.76 Å; λ = 2π×4.76/3.</span><span>Hint 3: λ = 29.9/3 ≈ 9.97 ≈ 9.9 Å (one full orbit circumference divided by n).</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C5.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">Minimum uncertainty in velocity of electron (m = 9.1×10⁻³¹ kg) if position uncertainty is 0.1 Å (h = 6.63×10⁻³⁴ J·s):</div>
+  <div class="options"><div class="opt">(A) 5.8×10⁵ m/s</div><div class="opt">(B) 5.8×10⁶ m/s</div><div class="opt">(C) 5.8×10⁷ m/s</div><div class="opt">(D) 5.8×10⁴ m/s</div></div>
+  <div class="hints"><span>Hint 1: Heisenberg: Δx·Δp ≥ h/4π → Δv ≥ h/(4π·m·Δx).</span><span>Hint 2: Δv = 6.63×10⁻³⁴ / (4π × 9.1×10⁻³¹ × 10⁻¹¹).</span><span>Hint 3: Δv ≈ 6.63×10⁻³⁴ / (1.14×10⁻⁴⁰) ≈ 5.8×10⁶ m/s.</span></div>
+</div>
+
+<div class="topic-header">Chemical Bonding</div>
+
+<div class="question-block">
+  <span class="q-num">C6.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">The shape of PCl₃ molecule is:</div>
+  <div class="options"><div class="opt">(A) Trigonal planar</div><div class="opt">(B) Trigonal pyramidal</div><div class="opt">(C) T-shape</div><div class="opt">(D) Linear</div></div>
+  <div class="hints"><span>Hint 1: Count electron pairs around P: 3 bonding + 1 lone pair.</span><span>Hint 2: 4 electron pairs → tetrahedral geometry; lone pair causes distortion.</span><span>Hint 3: Molecular shape (ignoring lone pair position) = trigonal pyramidal.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C7.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Bond order of O₂⁻ (superoxide ion) by MO theory:</div>
+  <div class="options"><div class="opt">(A) 1</div><div class="opt">(B) 1.5</div><div class="opt">(C) 2</div><div class="opt">(D) 2.5</div></div>
+  <div class="hints"><span>Hint 1: O₂ has bond order 2 (8 bonding, 4 antibonding electrons).</span><span>Hint 2: O₂⁻ has one extra electron in π* orbital.</span><span>Hint 3: BO = (8−5)/2 = 1.5.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C8.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Correct increasing order of bond length:</div>
+  <div class="options"><div class="opt">(A) C≡C &lt; C=C &lt; C−C</div><div class="opt">(B) C−C &lt; C=C &lt; C≡C</div><div class="opt">(C) C=C &lt; C≡C &lt; C−C</div><div class="opt">(D) All equal</div></div>
+  <div class="hints"><span>Hint 1: Higher bond order → shorter, stronger bond.</span><span>Hint 2: C≡C (triple) has highest bond order; C−C (single) has lowest.</span><span>Hint 3: Increasing bond length: C≡C &lt; C=C &lt; C−C.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C9.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Which molecule has the largest bond angle among these?</div>
+  <div class="options"><div class="opt">(A) H₂O (104.5°)</div><div class="opt">(B) NH₃ (107°)</div><div class="opt">(C) CO₂ (180°)</div><div class="opt">(D) SO₂ (~119°)</div></div>
+  <div class="hints"><span>Hint 1: CO₂ is sp hybridised — linear geometry.</span><span>Hint 2: Linear geometry → bond angle = 180°.</span><span>Hint 3: 180° is the maximum possible bond angle.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C10.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">Number of σ and π bonds in HC≡C−CH=CH₂:</div>
+  <div class="options"><div class="opt">(A) 6σ, 3π</div><div class="opt">(B) 7σ, 3π</div><div class="opt">(C) 7σ, 2π</div><div class="opt">(D) 8σ, 3π</div></div>
+  <div class="hints"><span>Hint 1: Every single bond is 1σ; double bond = 1σ+1π; triple bond = 1σ+2π.</span><span>Hint 2: Bonds: H−C(σ), C≡C(σ+2π), C−C(σ), C=C(σ+π), C−H(σ), 2×C−H(σ).</span><span>Hint 3: σ bonds: 1+1+1+1+1+2 = 7; π bonds: 2+1 = 3.</span></div>
+</div>
+
+<div class="topic-header">Thermodynamics</div>
+
+<div class="question-block">
+  <span class="q-num">C11.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">Standard enthalpy of formation of an element in its most stable standard state is:</div>
+  <div class="options"><div class="opt">(A) +1 kJ/mol</div><div class="opt">(B) 0 kJ/mol</div><div class="opt">(C) −1 kJ/mol</div><div class="opt">(D) Depends on the element</div></div>
+  <div class="hints"><span>Hint 1: Standard enthalpy of formation is defined for the formation of 1 mol of a substance from elements in their standard states.</span><span>Hint 2: An element in its standard state forms itself — no reaction occurs.</span><span>Hint 3: ΔH°f = 0 for all elements in their standard states (e.g., O₂(g), C(graphite)).</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C12.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">For CO(g) + ½O₂(g) → CO₂(g), the value of Δn_gas is:</div>
+  <div class="options"><div class="opt">(A) +0.5</div><div class="opt">(B) −0.5</div><div class="opt">(C) +1</div><div class="opt">(D) −1</div></div>
+  <div class="hints"><span>Hint 1: Δn = moles of gaseous products − moles of gaseous reactants.</span><span>Hint 2: Products: 1 mol CO₂; Reactants: 1 mol CO + 0.5 mol O₂ = 1.5 mol.</span><span>Hint 3: Δn = 1 − 1.5 = −0.5.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C13.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">For a spontaneous process at constant T and P, the Gibbs free energy change ΔG is:</div>
+  <div class="options"><div class="opt">(A) ΔG &gt; 0</div><div class="opt">(B) ΔG = 0</div><div class="opt">(C) ΔG &lt; 0</div><div class="opt">(D) ΔG ≥ 0</div></div>
+  <div class="hints"><span>Hint 1: ΔG = ΔH − TΔS is the criterion for spontaneity at constant T, P.</span><span>Hint 2: System moves to lower free energy spontaneously.</span><span>Hint 3: Spontaneous process: ΔG &lt; 0; equilibrium: ΔG = 0; non-spontaneous: ΔG &gt; 0.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C14.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">ΔH_vap of water = 40.7 kJ/mol at 100°C (373 K). Entropy change during vaporisation:</div>
+  <div class="options"><div class="opt">(A) 55 J/mol·K</div><div class="opt">(B) 80 J/mol·K</div><div class="opt">(C) 109 J/mol·K</div><div class="opt">(D) 137 J/mol·K</div></div>
+  <div class="hints"><span>Hint 1: At equilibrium (boiling point): ΔG = 0 → ΔS = ΔH/T.</span><span>Hint 2: ΔS = 40700 J/mol ÷ 373 K.</span><span>Hint 3: ΔS ≈ 109 J/mol·K.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C15.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">2 mol of ideal gas at 300 K expands reversibly and isothermally from 1 L to 10 L. Work done by gas (R = 8.314 J/mol·K):</div>
+  <div class="options"><div class="opt">(A) −5.74 kJ</div><div class="opt">(B) −11.48 kJ</div><div class="opt">(C) +11.48 kJ</div><div class="opt">(D) −22.96 kJ</div></div>
+  <div class="hints"><span>Hint 1: W = −nRT ln(V₂/V₁) (work done on gas; by gas is opposite sign).</span><span>Hint 2: W_by gas = nRT ln(V₂/V₁) = 2 × 8.314 × 300 × ln10.</span><span>Hint 3: = 4988 × 2.303 ≈ 11480 J ≈ 11.48 kJ (positive, gas expands). W = −11.48 kJ done on gas → W_by gas = +11.48 kJ; answer is −11.48 kJ for work done on gas.</span></div>
+</div>
+
+<div class="topic-header">Electrochemistry</div>
+
+<div class="question-block">
+  <span class="q-num">C16.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">Standard electrode potential of the standard hydrogen electrode (SHE) is:</div>
+  <div class="options"><div class="opt">(A) −1.0 V</div><div class="opt">(B) 0.00 V</div><div class="opt">(C) +1.0 V</div><div class="opt">(D) +1.23 V</div></div>
+  <div class="hints"><span>Hint 1: SHE is the reference electrode for all standard potential measurements.</span><span>Hint 2: By convention, all measurements are relative to SHE.</span><span>Hint 3: E°(SHE) = 0.00 V (defined).</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C17.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">EMF of the cell Zn|Zn²⁺||Cu²⁺|Cu. Given E°(Zn²⁺/Zn) = −0.76 V, E°(Cu²⁺/Cu) = +0.34 V:</div>
+  <div class="options"><div class="opt">(A) 0.42 V</div><div class="opt">(B) 0.76 V</div><div class="opt">(C) 1.10 V</div><div class="opt">(D) 1.52 V</div></div>
+  <div class="hints"><span>Hint 1: E°cell = E°cathode − E°anode.</span><span>Hint 2: Cu²⁺/Cu is cathode (reduction); Zn/Zn²⁺ is anode (oxidation).</span><span>Hint 3: E°cell = 0.34 − (−0.76) = 1.10 V.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C18.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Molar conductivity of a weak electrolyte at infinite dilution is best determined by:</div>
+  <div class="options"><div class="opt">(A) Direct measurement at infinite dilution</div><div class="opt">(B) Kohlrausch's law of independent migration</div><div class="opt">(C) Faraday's first law</div><div class="opt">(D) Nernst equation</div></div>
+  <div class="hints"><span>Hint 1: Weak electrolytes cannot be measured directly at infinite dilution (dissociation is never 100% even at low concentrations).</span><span>Hint 2: Kohlrausch's law: Λ°m = ν₊λ°₊ + ν₋λ°₋.</span><span>Hint 3: Using individual ionic conductances avoids the need for direct measurement.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C19.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Time required to deposit 0.54 g of silver (At. wt. = 108) by electrolysis using 0.5 A current (F = 96500 C/mol):</div>
+  <div class="options"><div class="opt">(A) 482.5 s</div><div class="opt">(B) 965 s</div><div class="opt">(C) 1930 s</div><div class="opt">(D) 3860 s</div></div>
+  <div class="hints"><span>Hint 1: Moles of Ag = 0.54/108 = 0.005 mol. Ag⁺ + e⁻ → Ag (1 electron per Ag).</span><span>Hint 2: Charge needed = 0.005 × 96500 = 482.5 C.</span><span>Hint 3: t = Q/I = 482.5/0.5 = 965 s.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C20.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">EMF of cell Zn|Zn²⁺(0.1 M)||Cu²⁺(0.01 M)|Cu at 25°C (E°cell = 1.10 V):</div>
+  <div class="options"><div class="opt">(A) 1.04 V</div><div class="opt">(B) 1.07 V</div><div class="opt">(C) 1.13 V</div><div class="opt">(D) 1.16 V</div></div>
+  <div class="hints"><span>Hint 1: Nernst equation: E = E° − (0.0592/n) log Q; n=2 for this cell.</span><span>Hint 2: Q = [Zn²⁺]/[Cu²⁺] = 0.1/0.01 = 10.</span><span>Hint 3: E = 1.10 − (0.0592/2) × log10 = 1.10 − 0.0296 ≈ 1.07 V.</span></div>
+</div>
+
+<div class="topic-header">Organic Chemistry</div>
+
+<div class="question-block">
+  <span class="q-num">C21.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">IUPAC name of CH₃−CH(OH)−CH₃:</div>
+  <div class="options"><div class="opt">(A) Propan-1-ol</div><div class="opt">(B) Propan-2-ol</div><div class="opt">(C) 2-methylethanol</div><div class="opt">(D) 1-methylethanol</div></div>
+  <div class="hints"><span>Hint 1: Identify the longest carbon chain containing the −OH group.</span><span>Hint 2: 3-carbon chain = propan-; −OH on carbon 2.</span><span>Hint 3: IUPAC name: propan-2-ol.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C22.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Addition of HBr to CH₃−CH=CH₂ as per Markovnikov's rule gives:</div>
+  <div class="options"><div class="opt">(A) CH₃−CH₂−CH₂Br</div><div class="opt">(B) CH₃−CHBr−CH₃</div><div class="opt">(C) CH₂Br−CH=CH₂</div><div class="opt">(D) CH₃−CH=CHBr</div></div>
+  <div class="hints"><span>Hint 1: Markovnikov: H adds to carbon with more H's; Br to carbon with fewer H's.</span><span>Hint 2: C1 (CH₂) has 2 H's; C2 (CH) has 1 H. H adds to C1, Br to C2.</span><span>Hint 3: Product: CH₃−CHBr−CH₃ (2-bromopropane).</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C23.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Reagent used to convert an alkene to a vicinal diol (syn addition):</div>
+  <div class="options"><div class="opt">(A) HBr</div><div class="opt">(B) H₂SO₄/H₂O</div><div class="opt">(C) Cold dilute KMnO₄ (Baeyer's reagent)</div><div class="opt">(D) Hot concentrated KMnO₄</div></div>
+  <div class="hints"><span>Hint 1: Vicinal diol = two −OH groups on adjacent carbons.</span><span>Hint 2: Baeyer's reagent (cold, dilute KMnO₄) oxidises double bond to diol without breaking it.</span><span>Hint 3: Hot conc. KMnO₄ cleaves the double bond — not a diol.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C24.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">A primary amine treated with NaNO₂ + HCl at 0–5°C gives:</div>
+  <div class="options"><div class="opt">(A) Secondary amine</div><div class="opt">(B) Diazonium salt</div><div class="opt">(C) Alcohol</div><div class="opt">(D) Amide</div></div>
+  <div class="hints"><span>Hint 1: NaNO₂ + HCl at 0–5°C generates HNO₂ in situ — this is diazotisation.</span><span>Hint 2: RNH₂ + HNO₂ → RN₂⁺Cl⁻ (diazonium salt) at 0–5°C.</span><span>Hint 3: Above 5°C, diazonium salt decomposes to give alcohol.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">C25.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">Which of these is the correct decreasing order of reactivity of halides in nucleophilic substitution (SN2)?</div>
+  <div class="options"><div class="opt">(A) RF &gt; RCl &gt; RBr &gt; RI</div><div class="opt">(B) RI &gt; RBr &gt; RCl &gt; RF</div><div class="opt">(C) RCl &gt; RBr &gt; RI &gt; RF</div><div class="opt">(D) RF &gt; RBr &gt; RCl &gt; RI</div></div>
+  <div class="hints"><span>Hint 1: SN2 rate depends on C−X bond strength (leaving group ability).</span><span>Hint 2: Better leaving group = weaker base = weaker conjugate acid of leaving group's anion.</span><span>Hint 3: I⁻ is the best leaving group (weakest base); F⁻ is the worst. RI &gt; RBr &gt; RCl &gt; RF.</span></div>
+</div>
+
+<!-- ═══════════════════ MATHEMATICS ═══════════════════ -->
+<div class="subject-header">📐 MATHEMATICS</div>
+
+<div class="topic-header">Limits &amp; Continuity</div>
+
+<div class="question-block">
+  <span class="q-num">M1.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">lim(x→0) [sin 3x / 5x] =</div>
+  <div class="options"><div class="opt">(A) 0</div><div class="opt">(B) 1</div><div class="opt">(C) 3/5</div><div class="opt">(D) 5/3</div></div>
+  <div class="hints"><span>Hint 1: Use standard result: lim(θ→0) sinθ/θ = 1.</span><span>Hint 2: Write sin3x/5x = (3/5) × (sin3x/3x).</span><span>Hint 3: As x→0, sin3x/3x → 1; so limit = 3/5.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M2.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">lim(x→0) [(1 − cos x) / x²] =</div>
+  <div class="options"><div class="opt">(A) 0</div><div class="opt">(B) 1/2</div><div class="opt">(C) 1</div><div class="opt">(D) Does not exist</div></div>
+  <div class="hints"><span>Hint 1: Use half-angle: 1 − cosx = 2sin²(x/2).</span><span>Hint 2: (1−cosx)/x² = 2sin²(x/2)/x² = (1/2)[sin(x/2)/(x/2)]².</span><span>Hint 3: As x→0, [sin(x/2)/(x/2)]² → 1, so limit = 1/2.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M3.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">f(x) = |x − 2| is not differentiable at:</div>
+  <div class="options"><div class="opt">(A) x = 0</div><div class="opt">(B) x = 1</div><div class="opt">(C) x = 2</div><div class="opt">(D) x = 3</div></div>
+  <div class="hints"><span>Hint 1: |x − 2| has a sharp corner where x − 2 = 0.</span><span>Hint 2: Left derivative at x=2: −1; Right derivative: +1.</span><span>Hint 3: Since L.H.D ≠ R.H.D at x = 2, not differentiable there.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M4.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">lim(x→1) [(x² − 1) / (x − 1)] =</div>
+  <div class="options"><div class="opt">(A) 0</div><div class="opt">(B) 1</div><div class="opt">(C) 2</div><div class="opt">(D) Does not exist</div></div>
+  <div class="hints"><span>Hint 1: Factor the numerator: x² − 1 = (x+1)(x−1).</span><span>Hint 2: Cancel (x−1): limit = lim(x→1) (x+1).</span><span>Hint 3: = 1 + 1 = 2.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M5.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">f(x) = x·sin(1/x) for x ≠ 0 and f(0) = 0. At x = 0, f is:</div>
+  <div class="options"><div class="opt">(A) Continuous and differentiable</div><div class="opt">(B) Continuous but not differentiable</div><div class="opt">(C) Differentiable but not continuous</div><div class="opt">(D) Neither continuous nor differentiable</div></div>
+  <div class="hints"><span>Hint 1: Check continuity: |x·sin(1/x)| ≤ |x| → 0 as x→0. So f is continuous.</span><span>Hint 2: Check differentiability: f'(0) = lim(h→0) h·sin(1/h)/h = lim sin(1/h).</span><span>Hint 3: lim sin(1/h) oscillates between −1 and 1 — limit doesn't exist. Not differentiable.</span></div>
+</div>
+
+<div class="topic-header">Integration</div>
+
+<div class="question-block">
+  <span class="q-num">M6.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">∫ cos x dx =</div>
+  <div class="options"><div class="opt">(A) −sin x + C</div><div class="opt">(B) sin x + C</div><div class="opt">(C) cos x + C</div><div class="opt">(D) −cos x + C</div></div>
+  <div class="hints"><span>Hint 1: Recall the standard integral of cosine.</span><span>Hint 2: d/dx(sin x) = cos x.</span><span>Hint 3: ∫cos x dx = sin x + C.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M7.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">∫₀^π sin x dx =</div>
+  <div class="options"><div class="opt">(A) 0</div><div class="opt">(B) 1</div><div class="opt">(C) 2</div><div class="opt">(D) π</div></div>
+  <div class="hints"><span>Hint 1: ∫sin x dx = −cos x + C.</span><span>Hint 2: [−cos x]₀^π = −cos π − (−cos 0).</span><span>Hint 3: = −(−1) + 1 = 2.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M8.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">∫ x·eˣ dx =</div>
+  <div class="options"><div class="opt">(A) x·eˣ + C</div><div class="opt">(B) eˣ + C</div><div class="opt">(C) (x+1)eˣ + C</div><div class="opt">(D) (x−1)eˣ + C</div></div>
+  <div class="hints"><span>Hint 1: Use integration by parts: ∫u dv = uv − ∫v du.</span><span>Hint 2: Let u = x, dv = eˣdx → du = dx, v = eˣ.</span><span>Hint 3: = x·eˣ − ∫eˣdx = x·eˣ − eˣ + C = (x−1)eˣ + C.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M9.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">∫₀¹ x²/(1 + x³) dx =</div>
+  <div class="options"><div class="opt">(A) (ln 2)/3</div><div class="opt">(B) ln 2</div><div class="opt">(C) (ln 3)/2</div><div class="opt">(D) 2(ln 2)/3</div></div>
+  <div class="hints"><span>Hint 1: Substitution: let u = 1 + x³, du = 3x² dx.</span><span>Hint 2: Limits change: x=0 → u=1; x=1 → u=2.</span><span>Hint 3: (1/3)∫₁² du/u = (1/3)[ln u]₁² = (ln 2)/3.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M10.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">Area enclosed between y = x² and y = x (in square units):</div>
+  <div class="options"><div class="opt">(A) 1/3</div><div class="opt">(B) 1/4</div><div class="opt">(C) 1/6</div><div class="opt">(D) 1/12</div></div>
+  <div class="hints"><span>Hint 1: Find intersection: x² = x → x = 0 or x = 1. On [0,1], x &gt; x².</span><span>Hint 2: Area = ∫₀¹ (x − x²) dx = [x²/2 − x³/3]₀¹.</span><span>Hint 3: = 1/2 − 1/3 = 3/6 − 2/6 = 1/6.</span></div>
+</div>
+
+<div class="topic-header">Matrices &amp; Determinants</div>
+
+<div class="question-block">
+  <span class="q-num">M11.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">For A = [[1, 2], [3, 4]], det(A) =</div>
+  <div class="options"><div class="opt">(A) −2</div><div class="opt">(B) 2</div><div class="opt">(C) 4</div><div class="opt">(D) −4</div></div>
+  <div class="hints"><span>Hint 1: det([[a,b],[c,d]]) = ad − bc.</span><span>Hint 2: det = 1×4 − 2×3.</span><span>Hint 3: = 4 − 6 = −2.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M12.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">If A is a 3×3 matrix with |A| = 5, then |2A| =</div>
+  <div class="options"><div class="opt">(A) 10</div><div class="opt">(B) 20</div><div class="opt">(C) 40</div><div class="opt">(D) 80</div></div>
+  <div class="hints"><span>Hint 1: For an n×n matrix: |kA| = kⁿ|A|.</span><span>Hint 2: n = 3, k = 2: |2A| = 2³ × 5.</span><span>Hint 3: = 8 × 5 = 40.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M13.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">If A is a 3×3 matrix with |A| = 2, then |adj(A)| =</div>
+  <div class="options"><div class="opt">(A) 2</div><div class="opt">(B) 4</div><div class="opt">(C) 6</div><div class="opt">(D) 8</div></div>
+  <div class="hints"><span>Hint 1: |adj(A)| = |A|^(n−1) for n×n matrix.</span><span>Hint 2: n = 3: |adj(A)| = |A|² = 2².</span><span>Hint 3: = 4.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M14.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Matrix A satisfies A² − 5A + 6I = 0. Then A⁻¹ =</div>
+  <div class="options"><div class="opt">(A) (A − 5I)/6</div><div class="opt">(B) (5I − A)/6</div><div class="opt">(C) (A + 5I)/6</div><div class="opt">(D) (5I + A)/6</div></div>
+  <div class="hints"><span>Hint 1: Multiply A² − 5A + 6I = 0 through by A⁻¹.</span><span>Hint 2: A − 5I + 6A⁻¹ = 0.</span><span>Hint 3: 6A⁻¹ = 5I − A → A⁻¹ = (5I − A)/6.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M15.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">Solve 2x + y = 5, x + 3y = 10 using Cramer's rule:</div>
+  <div class="options"><div class="opt">(A) x = 1, y = 3</div><div class="opt">(B) x = 2, y = 1</div><div class="opt">(C) x = 3, y = 1</div><div class="opt">(D) x = 1, y = 2</div></div>
+  <div class="hints"><span>Hint 1: D = |2,1; 1,3| = 6 − 1 = 5.</span><span>Hint 2: Dₓ = |5,1; 10,3| = 15−10 = 5 → x = Dₓ/D = 1.</span><span>Hint 3: D_y = |2,5; 1,10| = 20−5 = 15 → y = 15/5 = 3.</span></div>
+</div>
+
+<div class="topic-header">Complex Numbers</div>
+
+<div class="question-block">
+  <span class="q-num">M16.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">i¹⁰⁰ =</div>
+  <div class="options"><div class="opt">(A) i</div><div class="opt">(B) −1</div><div class="opt">(C) −i</div><div class="opt">(D) 1</div></div>
+  <div class="hints"><span>Hint 1: Powers of i cycle with period 4: i¹=i, i²=−1, i³=−i, i⁴=1.</span><span>Hint 2: Find 100 mod 4.</span><span>Hint 3: 100 ÷ 4 = 25 remainder 0 → i¹⁰⁰ = i⁴ = 1.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M17.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Modulus of (3 + 4i)/(1 − 2i):</div>
+  <div class="options"><div class="opt">(A) 1</div><div class="opt">(B) √5</div><div class="opt">(C) 5</div><div class="opt">(D) √10</div></div>
+  <div class="hints"><span>Hint 1: |z₁/z₂| = |z₁|/|z₂|.</span><span>Hint 2: |3+4i| = √(9+16) = 5; |1−2i| = √(1+4) = √5.</span><span>Hint 3: |z| = 5/√5 = √5.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M18.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">If ω is a complex cube root of unity (ω ≠ 1), then 1 + ω + ω² =</div>
+  <div class="options"><div class="opt">(A) 1</div><div class="opt">(B) −1</div><div class="opt">(C) 0</div><div class="opt">(D) 3</div></div>
+  <div class="hints"><span>Hint 1: Cube roots of unity are the roots of x³ − 1 = 0.</span><span>Hint 2: x³ − 1 = (x−1)(x² + x + 1); the other two roots satisfy x² + x + 1 = 0.</span><span>Hint 3: Sum of all three cube roots = 0 → 1 + ω + ω² = 0.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M19.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">Principal argument of the complex number −1 − i:</div>
+  <div class="options"><div class="opt">(A) π/4</div><div class="opt">(B) −π/4</div><div class="opt">(C) 3π/4</div><div class="opt">(D) −3π/4</div></div>
+  <div class="hints"><span>Hint 1: −1 − i is in the third quadrant (both real and imaginary parts negative).</span><span>Hint 2: Reference angle: arctan(1/1) = π/4.</span><span>Hint 3: Principal argument ∈ (−π, π]: π + π/4 exceeds π, so use −π + π/4... third quadrant: arg = −π + π/4 = −3π/4.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M20.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">|z₁| = |z₂| = 1 and |z₁ + z₂| = 1. Then |z₁ − z₂| =</div>
+  <div class="options"><div class="opt">(A) 1</div><div class="opt">(B) √2</div><div class="opt">(C) √3</div><div class="opt">(D) 2</div></div>
+  <div class="hints"><span>Hint 1: Use the identity: |z₁+z₂|² + |z₁−z₂|² = 2(|z₁|² + |z₂|²).</span><span>Hint 2: 1 + |z₁−z₂|² = 2(1+1) = 4.</span><span>Hint 3: |z₁−z₂|² = 3 → |z₁−z₂| = √3.</span></div>
+</div>
+
+<div class="topic-header">Probability</div>
+
+<div class="question-block">
+  <span class="q-num">M21.</span><span class="level-badge l1">Level 1</span>
+  <div class="q-text">Two dice are thrown simultaneously. Probability that the sum equals 7:</div>
+  <div class="options"><div class="opt">(A) 1/36</div><div class="opt">(B) 1/12</div><div class="opt">(C) 1/6</div><div class="opt">(D) 1/4</div></div>
+  <div class="hints"><span>Hint 1: List pairs that sum to 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1).</span><span>Hint 2: Favourable outcomes = 6; Total outcomes = 36.</span><span>Hint 3: P = 6/36 = 1/6.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M22.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">P(A) = 0.6, P(B) = 0.4, P(A∩B) = 0.2. P(A|B) =</div>
+  <div class="options"><div class="opt">(A) 0.2</div><div class="opt">(B) 0.4</div><div class="opt">(C) 0.5</div><div class="opt">(D) 0.8</div></div>
+  <div class="hints"><span>Hint 1: P(A|B) = P(A∩B) / P(B).</span><span>Hint 2: = 0.2 / 0.4.</span><span>Hint 3: = 0.5.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M23.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">A bag contains 3 red and 4 blue balls. Two are drawn without replacement. P(both red):</div>
+  <div class="options"><div class="opt">(A) 1/7</div><div class="opt">(B) 9/49</div><div class="opt">(C) 2/7</div><div class="opt">(D) 3/14</div></div>
+  <div class="hints"><span>Hint 1: P(1st red) = 3/7; P(2nd red | 1st red) = 2/6.</span><span>Hint 2: P(both red) = (3/7) × (2/6).</span><span>Hint 3: = 6/42 = 1/7.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M24.</span><span class="level-badge l2">Level 2</span>
+  <div class="q-text">A and B are independent events with P(A) = 0.3 and P(B) = 0.4. P(A∪B) =</div>
+  <div class="options"><div class="opt">(A) 0.50</div><div class="opt">(B) 0.58</div><div class="opt">(C) 0.70</div><div class="opt">(D) 1.20</div></div>
+  <div class="hints"><span>Hint 1: P(A∪B) = P(A) + P(B) − P(A∩B).</span><span>Hint 2: Since independent, P(A∩B) = P(A)·P(B) = 0.12.</span><span>Hint 3: P(A∪B) = 0.3 + 0.4 − 0.12 = 0.58.</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">M25.</span><span class="level-badge l3">Level 3</span>
+  <div class="q-text">Three fair coins are tossed. P(at least 2 heads):</div>
+  <div class="options"><div class="opt">(A) 1/4</div><div class="opt">(B) 3/8</div><div class="opt">(C) 1/2</div><div class="opt">(D) 3/4</div></div>
+  <div class="hints"><span>Hint 1: P(exactly 2H) = C(3,2)×(1/2)³ = 3/8.</span><span>Hint 2: P(exactly 3H) = (1/2)³ = 1/8.</span><span>Hint 3: P(at least 2H) = 3/8 + 1/8 = 4/8 = 1/2.</span></div>
+</div>
+
+<!-- ═══════════════════ ANSWER KEY ═══════════════════ -->
+<div class="answer-key">
+  <h2>Answer Key</h2>
+
+  <div class="ak-subject">
+    <h3>⚡ Physics</h3>
+    <div class="ak-grid">
+      <div class="ak-item"><span class="qn">P1</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">P2</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P3</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P4</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P5</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+      <div class="ak-item"><span class="qn">P6</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">P7</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P8</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P9</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P10</span> <span class="ans">A</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+      <div class="ak-item"><span class="qn">P11</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">P12</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P13</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P14</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P15</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+      <div class="ak-item"><span class="qn">P16</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">P17</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P18</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P19</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P20</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+      <div class="ak-item"><span class="qn">P21</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">P22</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">P23</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P24</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">P25</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+    </div>
+  </div>
+
+  <div class="ak-subject">
+    <h3>🧪 Chemistry</h3>
+    <div class="ak-grid">
+      <div class="ak-item"><span class="qn">C1</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">C2</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">C3</span> <span class="ans">D</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C4</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C5</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+      <div class="ak-item"><span class="qn">C6</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">C7</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C8</span> <span class="ans">A</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C9</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C10</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+      <div class="ak-item"><span class="qn">C11</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">C12</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C13</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C14</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C15</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+      <div class="ak-item"><span class="qn">C16</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">C17</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C18</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C19</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C20</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+      <div class="ak-item"><span class="qn">C21</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">C22</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C23</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C24</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">C25</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+    </div>
+  </div>
+
+  <div class="ak-subject">
+    <h3>📐 Mathematics</h3>
+    <div class="ak-grid">
+      <div class="ak-item"><span class="qn">M1</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">M2</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M3</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M4</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M5</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+      <div class="ak-item"><span class="qn">M6</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">M7</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M8</span> <span class="ans">D</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M9</span> <span class="ans">A</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M10</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+      <div class="ak-item"><span class="qn">M11</span> <span class="ans">A</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">M12</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M13</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M14</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M15</span> <span class="ans">A</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+      <div class="ak-item"><span class="qn">M16</span> <span class="ans">D</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">M17</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M18</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M19</span> <span class="ans">D</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M20</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+      <div class="ak-item"><span class="qn">M21</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv1</span></div>
+      <div class="ak-item"><span class="qn">M22</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M23</span> <span class="ans">A</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M24</span> <span class="ans">B</span> <span style="font-size:8pt;color:#666;">Lv2</span></div>
+      <div class="ak-item"><span class="qn">M25</span> <span class="ans">C</span> <span style="font-size:8pt;color:#666;">Lv3</span></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -489,10 +489,102 @@ function stopSpeech() {
     showScreen('upload');
   }
 
+  // ── PDF Upload Screen ──────────────────────────────────────
+  function initPDFUpload() {
+    const keyInput  = $('gemini-key');
+    const dropZone  = $('pdf-drop-zone');
+    const fileInput = $('pdf-input');
+
+    // Restore saved key
+    const saved = localStorage.getItem('quizadapt_gemini_key');
+    if (saved) keyInput.value = saved;
+
+    $('btn-save-key').addEventListener('click', () => {
+      const key = keyInput.value.trim();
+      if (!key) { showPdfStatus('Enter an API key first.', 'error'); return; }
+      localStorage.setItem('quizadapt_gemini_key', key);
+      showPdfStatus('API key saved to browser.', 'success');
+      setTimeout(() => { $('pdf-status').style.display = 'none'; }, 2000);
+    });
+
+    dropZone.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', e => {
+      const f = e.target.files[0];
+      if (f) handlePDF(f);
+    });
+    dropZone.addEventListener('dragover', e => {
+      e.preventDefault(); dropZone.classList.add('drag-over');
+    });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+    dropZone.addEventListener('drop', e => {
+      e.preventDefault(); dropZone.classList.remove('drag-over');
+      const f = e.dataTransfer.files[0];
+      if (f && f.name.toLowerCase().endsWith('.pdf')) handlePDF(f);
+      else showPdfStatus('Please drop a .pdf file.', 'error');
+    });
+
+    $('btn-pdf-use').addEventListener('click', () => {
+      if (!_pdfQuestions?.length) return;
+      App.start(_pdfQuestions);
+    });
+
+    $('btn-pdf-download').addEventListener('click', () => {
+      if (!_pdfQuestions?.length) return;
+      const name = (_lastPDFName || 'questions').replace(/\.pdf$/i, '') + '.csv';
+      PDFConverter.downloadCSV(_pdfQuestions, name);
+    });
+  }
+
+  let _pdfQuestions = null;
+  let _lastPDFName  = '';
+
+  function showPdfStatus(msg, type = 'info') {
+    const colours = {
+      success: 'rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:#6EE7B7',
+      error:   'rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#FCA5A5',
+      info:    'rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);color:#93C5FD',
+    };
+    const el = $('pdf-status');
+    el.style.display = 'block';
+    el.innerHTML = `<div style="padding:12px 16px;border-radius:10px;font-size:14px;font-weight:500;background:${colours[type] || colours.info}">${msg}</div>`;
+  }
+
+  async function handlePDF(file) {
+    const key = $('gemini-key').value.trim() ||
+                localStorage.getItem('quizadapt_gemini_key') || '';
+    if (!key) {
+      showPdfStatus('Please enter and save your Gemini API key first.', 'error');
+      return;
+    }
+
+    _lastPDFName = file.name;
+    $('pdf-actions').style.display = 'none';
+    showPdfStatus(`⏳ Sending <strong>${file.name}</strong> to Gemini AI… (this may take 10–30 s)`, 'info');
+
+    try {
+      const { questions, errors } = await PDFConverter.convertPDF(file, key);
+      _pdfQuestions = questions;
+
+      if (questions.length === 0) {
+        showPdfStatus('No compatible single-correct MCQs found. Make sure the PDF contains MCQ questions with 4 options.', 'error');
+        return;
+      }
+
+      const skipped = errors.length ? ` · ${errors.length} skipped` : '';
+      showPdfStatus(`✓ Extracted <strong>${questions.length}</strong> question${questions.length > 1 ? 's' : ''}${skipped} from ${file.name}`, 'success');
+      $('pdf-actions').style.display = 'flex';
+    } catch (err) {
+      showPdfStatus('❌ ' + err.message, 'error');
+    } finally {
+      $('pdf-input').value = '';
+    }
+  }
+
   // ── Init ───────────────────────────────────────────────────
   function init() {
     bindEngineEvents();
     initUploadScreen();
+    initPDFUpload();
   }
 
   // ── Public API ─────────────────────────────────────────────
