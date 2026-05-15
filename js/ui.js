@@ -561,8 +561,21 @@ function stopSpeech() {
     $('pdf-actions').style.display = 'none';
     showPdfStatus(`⏳ Sending <strong>${file.name}</strong> to Gemini AI… (this may take 10–30 s)`, 'info');
 
+    let countdownTimer = null;
+
+    function onRateLimit(secs) {
+      let remaining = secs;
+      showPdfStatus(`⚠️ Rate limit hit — auto-retrying in <strong>${remaining}s</strong>…`, 'info');
+      countdownTimer = setInterval(() => {
+        remaining--;
+        if (remaining <= 0) { clearInterval(countdownTimer); return; }
+        showPdfStatus(`⚠️ Rate limit hit — auto-retrying in <strong>${remaining}s</strong>…`, 'info');
+      }, 1000);
+    }
+
     try {
-      const { questions, errors } = await PDFConverter.convertPDF(file, key);
+      const { questions, errors } = await PDFConverter.convertPDF(file, key, onRateLimit);
+      clearInterval(countdownTimer);
       _pdfQuestions = questions;
 
       if (questions.length === 0) {
@@ -574,6 +587,7 @@ function stopSpeech() {
       showPdfStatus(`✓ Extracted <strong>${questions.length}</strong> question${questions.length > 1 ? 's' : ''}${skipped} from ${file.name}`, 'success');
       $('pdf-actions').style.display = 'flex';
     } catch (err) {
+      clearInterval(countdownTimer);
       showPdfStatus('❌ ' + err.message, 'error');
     } finally {
       $('pdf-input').value = '';

@@ -8,7 +8,7 @@
 
 const PDFConverter = (() => {
 
-  const MODEL_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+  const MODEL_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
   const PROMPT = `You are a question extractor for a JEE / competitive exam quiz app.
 
@@ -34,7 +34,7 @@ SKIP these question types (they are incompatible):
 Return ONLY a raw JSON array. No markdown, no explanation, no code fences.
 Start your response with [ and end with ].`;
 
-  async function convertPDF(file, apiKey) {
+  async function convertPDF(file, apiKey, onRetry) {
     if (!apiKey) throw new Error('Gemini API key is required.');
 
     const base64 = await fileToBase64(file);
@@ -49,18 +49,31 @@ Start your response with [ and end with ].`;
       generationConfig: { temperature: 0.1, maxOutputTokens: 8192 }
     };
 
-    const res = await fetch(`${MODEL_URL}?key=${encodeURIComponent(apiKey)}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
-    });
+    const RETRY_WAIT = 65000;
+    let attempt = 0;
+    let res;
+
+    while (true) {
+      res = await fetch(`${MODEL_URL}?key=${encodeURIComponent(apiKey)}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+
+      if (res.status !== 429) break;
+
+      attempt++;
+      if (attempt > 2) throw new Error('Rate limit persists after retries. Try again in a few minutes.');
+
+      if (onRetry) onRetry(Math.ceil(RETRY_WAIT / 1000));
+      await new Promise(r => setTimeout(r, RETRY_WAIT));
+    }
 
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
       const msg = (err?.error?.message) || `HTTP ${res.status}`;
       if (res.status === 400) throw new Error('Bad request / invalid API key: ' + msg);
       if (res.status === 403) throw new Error('API key not authorised. Check your key at aistudio.google.com');
-      if (res.status === 429) throw new Error('Rate limit hit. Wait ~60 s and try again.');
       throw new Error(msg);
     }
 
