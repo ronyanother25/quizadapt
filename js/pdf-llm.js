@@ -8,7 +8,7 @@
 
 const PDFConverter = (() => {
 
-  const MODEL_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+  const MODEL_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent';
 
   const PROMPT = `You are a question extractor for a JEE / competitive exam quiz app.
 
